@@ -1,0 +1,12 @@
+﻿<Application
+    x:Class="SteamTile.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SteamTile">
+    <Application.Resources>
+        <ResourceDictionary>
+            <x:String x:Key="AppName">Steam Tile</x:String>
+            <x:String x:Key="api_key">34A7D239FE487B15B5EEDB19F48D4FF0</x:String>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,1 @@
+c:\users\clark\documents\visual studio 2015\Projects\SteamTile\SteamTile\SteamTile.WindowsPhone\SteamTile.WindowsPhone.csproj;neutral

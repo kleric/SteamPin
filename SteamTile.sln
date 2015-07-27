@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SteamTile", "SteamTile", "{995F87CE-7203-4DD9-B6F0-2BF7F84CFC9E}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SteamTile.Shared", "SteamTile\SteamTile.Shared\SteamTile.Shared.shproj", "{213A2CF5-D779-41BC-92F8-D8AAEF3AF0F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamTile.Windows", "SteamTile\SteamTile.Windows\SteamTile.Windows.csproj", "{F0AF62E7-0573-4DBC-A5B6-3B5FF66B9C19}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		SteamTile\SteamTile.Shared\SteamTile.Shared.projitems*{f0af62e7-0573-4dbc-a5b6-3b5ff66b9c19}*SharedItemsImports = 4
+		SteamTile\SteamTile.Shared\SteamTile.Shared.projitems*{213a2cf5-d779-41bc-92f8-d8aaef3af0f8}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0AF62E7-0573-4DBC-A5B6-3B5FF66B9C19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0AF62E7-0573-4DBC-A5B6-3B5FF66B9C19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0AF62E7-0573-4DBC-A5B6-3B5FF66B9C19}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F0AF62E7-0573-4DBC-A5B6-3B5FF66B9C19}.Debug|ARM.ActiveCfg = Debug|ARM
+		{F0AF62E7-0573-4DBC-A5B6-3B5FF66B9C19}.Debug|ARM.Build.0 = Debug|ARM
+		{F0AF62E7-0573-4DBC-A5B6-3B5FF66B9C19}.Debug|ARM.Deploy.0 = Debug|ARM
+		{F0AF62E7-0573-4DBC-A5B6-3B5FF66B9C19}.Debug|x64.ActiveCfg = Debug|x64
+		{F0AF62E7-0573-4DBC-A5B6-3B5FF66B9C19}.Debug|x64.Build.0 = Debug|x64
+		{F0AF62E7-0573-4DBC-A5B6-3B5FF66B9C19}.Debug|x64.Deploy.0 = Debug|x64
+		{F0AF62E7-0573-4DBC-A5B6-3B5FF66B9C19}.Debug|x86.ActiveCfg = Debug|x86
+		{F0AF62E7-0573-4DBC-A5B6-3B5FF66B9C19}.Debug|x86.Build.0 = Debug|x86
+		{F0AF62E7-0573-4DBC-A5B6-3B5FF66B9C19}.Debug|x86.Deploy.0 = Debug|x86
+		{F0AF62E7-0573-4DBC-A5B6-3B5FF66B9C19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0AF62E7-0573-4DBC-A5B6-3B5FF66B9C19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0AF62E7-0573-4DBC-A5B6-3B5FF66B9C19}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F0AF62E7-0573-4DBC-A5B6-3B5FF66B9C19}.Release|ARM.ActiveCfg = Release|ARM
+		{F0AF62E7-0573-4DBC-A5B6-3B5FF66B9C19}.Release|ARM.Build.0 = Release|ARM
+		{F0AF62E7-0573-4DBC-A5B6-3B5FF66B9C19}.Release|ARM.Deploy.0 = Release|ARM
+		{F0AF62E7-0573-4DBC-A5B6-3B5FF66B9C19}.Release|x64.ActiveCfg = Release|x64
+		{F0AF62E7-0573-4DBC-A5B6-3B5FF66B9C19}.Release|x64.Build.0 = Release|x64
+		{F0AF62E7-0573-4DBC-A5B6-3B5FF66B9C19}.Release|x64.Deploy.0 = Release|x64
+		{F0AF62E7-0573-4DBC-A5B6-3B5FF66B9C19}.Release|x86.ActiveCfg = Release|x86
+		{F0AF62E7-0573-4DBC-A5B6-3B5FF66B9C19}.Release|x86.Build.0 = Release|x86
+		{F0AF62E7-0573-4DBC-A5B6-3B5FF66B9C19}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{213A2CF5-D779-41BC-92F8-D8AAEF3AF0F8} = {995F87CE-7203-4DD9-B6F0-2BF7F84CFC9E}
+		{F0AF62E7-0573-4DBC-A5B6-3B5FF66B9C19} = {995F87CE-7203-4DD9-B6F0-2BF7F84CFC9E}
+	EndGlobalSection
+EndGlobal
