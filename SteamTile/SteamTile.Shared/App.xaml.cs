@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.System;
@@ -38,14 +39,6 @@ namespace SteamTile
             this.Suspending += this.OnSuspending;
         }
 
-        private async void StartGame(string appid)
-        {
-            Uri uri = new Uri("steam://rungameid/" + appid);
-            await Launcher.LaunchUriAsync(uri);
-
-            Application.Current.Exit();
-        }
-
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
         /// will be used when the application is launched to open a specific file, to display
@@ -65,9 +58,6 @@ namespace SteamTile
                 // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame();
 
-                // TODO: change this value to a cache size that is appropriate for your application
-                rootFrame.CacheSize = 1;
-
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
                     // TODO: Load state from previously suspended application
@@ -77,24 +67,21 @@ namespace SteamTile
                 Window.Current.Content = rootFrame;
             }
 
-            if (rootFrame.Content == null)
-            {
-                // When the navigation stack isn't restored navigate to the first page,
-                // configuring the new page by passing required information as a navigation
-                // parameter
-                if (!rootFrame.Navigate(typeof(MainPage), e.Arguments))
-                {
-                    throw new Exception("Failed to create initial page");
-                }
-            }
+            Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
 
+            string steam_id = (string)localSettings.Values["steamid"];
+
+            if (!String.IsNullOrEmpty(steam_id))
+            {
+                rootFrame.Navigate(typeof(SteamLibrary), e.Arguments);
+            }
+            else
+            {
+                rootFrame.Navigate(typeof(MainPage), e.Arguments);
+            }
             // Ensure the current window is active
             Window.Current.Activate();
-
-            if(e.Arguments.Length > 0)
-            {
-                StartGame(e.Arguments);
-            }
         }
 
         /// <summary>
@@ -106,8 +93,8 @@ namespace SteamTile
         /// <param name="e">Details about the suspend request.</param>
         private void OnSuspending(object sender, SuspendingEventArgs e)
         {
+            CoreApplication.Exit();
             var deferral = e.SuspendingOperation.GetDeferral();
-
             // TODO: Save application state and stop any background activity
             deferral.Complete();
         }

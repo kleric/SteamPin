@@ -35,3 +35,40 @@ c:\users\clark\documents\visual studio 2015\Projects\SteamTile\SteamTile\SteamTi
 c:\users\clark\documents\visual studio 2015\Projects\SteamTile\SteamTile\SteamTile.Windows\obj\Debug\SteamLibrary.g.cs
 c:\users\clark\documents\visual studio 2015\Projects\SteamTile\SteamTile\SteamTile.Windows\obj\Debug\SteamLibrary.xaml
 c:\users\clark\documents\visual studio 2015\Projects\SteamTile\SteamTile\SteamTile.Windows\obj\Debug\SteamLibrary.xbf
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\bin\Debug\App.xbf
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\bin\Debug\MainPage.xbf
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\bin\Debug\SteamLibrary.xbf
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\bin\Debug\SteamTile.Windows.xr.xml
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\bin\Debug\SteamTile.Windows.exe
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\bin\Debug\SteamTile.Windows.pdb
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\bin\Debug\resources.pri
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\bin\Debug\AppxManifest.xml
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\bin\Debug\SteamTile.Windows.build.appxrecipe
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\App.g.i.cs
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\App.g.cs
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\MainPage.g.i.cs
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\MainPage.g.cs
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\SteamLibrary.g.i.cs
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\SteamLibrary.g.cs
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\XamlTypeInfo.g.cs
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\App.xaml
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\MainPage.xaml
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\SteamLibrary.xaml
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\App.xbf
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\MainPage.xbf
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\SteamLibrary.xbf
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\XamlSaveStateFile.xml
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\SteamTile.Windows.exe
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\SteamTile.Windows.pdb
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\priconfig.xml
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\priconfig.xml.intermediate
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\layout.resfiles
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\layout.resfiles.intermediate
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\resources.resfiles
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\resources.resfiles.intermediate
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\pri.resfiles
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\pri.resfiles.intermediate
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\qualifiers.txt
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\qualifiers.txt.intermediate
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\obj\Debug\ProjectArchitectures.txt

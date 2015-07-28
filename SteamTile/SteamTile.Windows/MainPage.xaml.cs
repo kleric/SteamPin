@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -110,7 +111,14 @@ namespace SteamTile
 
             string steamID = steamIDInput.Text.Trim();
 
-            localSettings.Values["steamid"] = steamIDInput.Text.Trim();
+            if(localSettings.Values.ContainsKey("steamid"))
+            {
+                localSettings.Values["steamid"] = steamIDInput.Text.Trim();
+            }
+            else
+            {
+                localSettings.Values.Add("steamid", steamIDInput.Text.Trim());
+            }
 
             this.Frame.Navigate(typeof(SteamLibrary));
         }

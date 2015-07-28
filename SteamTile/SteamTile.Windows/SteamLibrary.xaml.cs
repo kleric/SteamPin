@@ -10,12 +10,15 @@ using System.Net.Http.Headers;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
+using System.Threading.Tasks;
+using Windows.ApplicationModel.Core;
 using Windows.Data.Json;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
 using Windows.Storage.Streams;
 using Windows.System;
+using Windows.UI.Core;
 using Windows.UI.StartScreen;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -36,6 +39,7 @@ namespace SteamTile
     public sealed partial class SteamLibrary : Page
     {
         private List<Game> library = new List<Game>();
+        private string launched_appid;
 
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
@@ -62,6 +66,14 @@ namespace SteamTile
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
+
+            Loaded += (s, e) =>
+            {
+                if (!String.IsNullOrEmpty(launched_appid))
+                {
+                    StartGame(launched_appid);
+                }
+            };
         }
 
         /// <summary>
@@ -114,24 +126,6 @@ namespace SteamTile
                     await writer.StoreAsync();
                     writer.DetachStream();
                     await fs.FlushAsync();
-                    /*try
-                    {
-                        var response = await HttpWebRequest.Create(g.imgurl).GetResponseAsync();
-                        List<Byte> allBytes = new List<byte>();
-                        using (Stream imageStream = response.GetResponseStream())
-                        {
-                            byte[] buffer = new byte[4000];
-                            int bytesRead = 0;
-                            while ((bytesRead = await imageStream.ReadAsync(buffer, 0, 4000)) > 0)
-                            {
-                                allBytes.AddRange(buffer.Take(bytesRead));
-                            }
-                        }
-                        var file = await ApplicationData.Current.LocalFolder.CreateFileAsync(
-                                    g.appid + ".jpg", CreationCollisionOption.FailIfExists);
-                        await FileIO.WriteBytesAsync(file, allBytes.ToArray());
-                    }
-                    catch (WebException e) { }*/
                 }
             }
         }
@@ -190,11 +184,34 @@ namespace SteamTile
             DownloadImages();
         }
 
+        private async void StartGame(string appid)
+        {
+            var uri = new Uri(@"steam://rungameid/" + appid);
+
+            var success = await Launcher.LaunchUriAsync(uri);
+
+            if (!success)
+            {
+                await Task.Delay(TimeSpan.FromMilliseconds(200));
+                StartGame(appid);
+            }
+            else
+            {
+                Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
+   () =>
+   {
+       Application.Current.Exit();
+});
+            }
+        }
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             navigationHelper.OnNavigatedTo(e);
 
             LoadLibrary();
+
+            launched_appid = e.Parameter.ToString();
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -207,15 +224,14 @@ namespace SteamTile
         public async void gameGridView_ItemClick(object sender, ItemClickEventArgs e)
         {
             Game selectedGame = e.ClickedItem as Game;
+
             Uri square150x150Logo = new Uri("ms-appdata:///local/" + selectedGame.appid + ".jpg");
             TileSize newTileDesiredSize = TileSize.Wide310x150;
 
-            SecondaryTile t2 = new SecondaryTile("steamlauncher_" + selectedGame.appid, "", "" + selectedGame.appid, square150x150Logo, newTileDesiredSize);
+            SecondaryTile t2 = new SecondaryTile("steamlauncher_" + selectedGame.appid, selectedGame.name, "" + selectedGame.appid, square150x150Logo, newTileDesiredSize);
             t2.VisualElements.Wide310x150Logo = square150x150Logo;
 
             await t2.RequestCreateAsync();
-            //StartGame(selectedGame.appid);
-
         }
     }
 }
