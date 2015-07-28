@@ -26,8 +26,4 @@ Then when launched with a Secondary Tile it checks for an argument (the App ID),
 
 The launching is a bit hacky, as I was having some trouble with actually getting the game to start. So that just continuously tries to start the game until it launches. 
 
-License
-=========
-All the code is under the MIT license
-
 
