@@ -132,6 +132,7 @@ namespace SteamTile
 
         private async void LoadLibrary()
         {
+
             List<Game> tempLibrary = new List<Game>();
 
             Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
@@ -197,25 +198,26 @@ namespace SteamTile
             }
             else
             {
-                Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
-   () =>
-   {
-       Application.Current.Exit();
-});
+                Application.Current.Exit();
             }
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            base.OnNavigatedTo(e);
             navigationHelper.OnNavigatedTo(e);
 
             LoadLibrary();
 
-            launched_appid = e.Parameter.ToString();
+            if(e.Parameter != null)
+            {
+                launched_appid = e.Parameter.ToString();
+            }
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
+            base.OnNavigatedFrom(e);
             navigationHelper.OnNavigatedFrom(e);
         }
 

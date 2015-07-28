@@ -3,7 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Data.Json;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.System;
@@ -104,21 +107,49 @@ namespace SteamTile
 
         #endregion
 
-        private void Confirm_Click(object sender, RoutedEventArgs e)
+        private async void Confirm_Click(object sender, RoutedEventArgs e)
         {
             Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
             Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
 
             string steamID = steamIDInput.Text.Trim();
 
-            if(localSettings.Values.ContainsKey("steamid"))
+            string api_key = (string)App.Current.Resources["api_key"];
+
+            using (var client = new HttpClient())
             {
-                localSettings.Values["steamid"] = steamIDInput.Text.Trim();
+                client.BaseAddress = new Uri("http://api.steampowered.com/");
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpResponseMessage response = await client.GetAsync("ISteamUser/ResolveVanityURL/v0001/?key=" + api_key + "&vanityurl=" + steamID);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var result = await response.Content.ReadAsStringAsync();
+
+                    JsonValue jsonValue = JsonValue.Parse(result);
+                    JsonObject obj = jsonValue.GetObject().GetNamedObject("response");
+
+                    int success = (int)obj.GetNamedNumber("success");
+
+                    if(success == 1)
+                    {
+                        steamID = obj.GetNamedString("steamid").Trim();
+                    }
+                }
+            }
+
+
+            if (localSettings.Values.ContainsKey("steamid"))
+            {
+                localSettings.Values["steamid"] = steamID;
             }
             else
             {
-                localSettings.Values.Add("steamid", steamIDInput.Text.Trim());
+                localSettings.Values.Add("steamid", steamID);
             }
+
 
             this.Frame.Navigate(typeof(SteamLibrary));
         }

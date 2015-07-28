@@ -65,21 +65,23 @@ namespace SteamTile
 
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
+
+                Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+                Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+
+                string steam_id = (string)localSettings.Values["steamid"];
+
+                if (!String.IsNullOrEmpty(steam_id))
+                {
+                    rootFrame.Navigate(typeof(SteamLibrary), e.Arguments);
+                }
+                else
+                {
+                    rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                }
             }
 
-            Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-            Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
 
-            string steam_id = (string)localSettings.Values["steamid"];
-
-            if (!String.IsNullOrEmpty(steam_id))
-            {
-                rootFrame.Navigate(typeof(SteamLibrary), e.Arguments);
-            }
-            else
-            {
-                rootFrame.Navigate(typeof(MainPage), e.Arguments);
-            }
             // Ensure the current window is active
             Window.Current.Activate();
         }
@@ -93,7 +95,6 @@ namespace SteamTile
         /// <param name="e">Details about the suspend request.</param>
         private void OnSuspending(object sender, SuspendingEventArgs e)
         {
-            CoreApplication.Exit();
             var deferral = e.SuspendingOperation.GetDeferral();
             // TODO: Save application state and stop any background activity
             deferral.Complete();

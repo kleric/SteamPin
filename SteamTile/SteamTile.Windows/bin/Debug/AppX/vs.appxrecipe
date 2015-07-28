@@ -22,13 +22,13 @@
     <AppXManifest Include="C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-07-27T22:55:40.726</Modified>
+      <Modified>2015-07-28T02:35:38.349</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\bin\Debug\SteamTile.Windows.exe">
       <PackagePath>SteamTile.Windows.exe</PackagePath>
-      <Modified>2015-07-28T01:47:07.814</Modified>
+      <Modified>2015-07-28T02:43:16.572</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
@@ -64,19 +64,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2015-07-27T22:55:40.588</Modified>
+      <Modified>2015-07-28T02:35:38.161</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2015-07-28T00:51:53.769</Modified>
+      <Modified>2015-07-28T02:35:38.161</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\bin\Debug\SteamLibrary.xbf">
       <PackagePath>SteamLibrary.xbf</PackagePath>
-      <Modified>2015-07-28T00:51:53.771</Modified>
+      <Modified>2015-07-28T02:35:38.162</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Clark\Documents\GitHubVisualStudio\SteamPin\SteamTile\SteamTile.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-07-27T22:55:40.679</Modified>
+      <Modified>2015-07-28T02:35:38.312</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
